@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ title }} | Musashi Sushi — Frisco, TX</title>
+    <link rel="icon" type="image/png" sizes="32x32" href="{{ '/assets/favicons/favicon-32x32.png' | url }}?v1">
+    <link rel="stylesheet" href="{{ '/assets/css/styles.css' | url }}">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
+    <style>
+      #main-nav { background-color: #141e21 !important; transition: none !important; }
+    </style>
+  </head>
+  <body class="overflow-hidden">
+    {% include "components/header.njk" %}
+    <div style="height: 100vh;">
+      {% block content %}{% endblock %}
+    </div>
+    <script src="{{ '/assets/js/main.js' | url }}"></script>
+  </body>
+</html>

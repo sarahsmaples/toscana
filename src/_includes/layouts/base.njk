@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- Standard meta tags -->
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="{{ description if description else 'Musashi is a premium sushi and Japanese cuisine restaurant in Frisco, TX. Fresh fish flown in regularly. Upscale dining near Dallas — reserve your table today.' }}">
+    <meta name="keywords" content="sushi Frisco TX, Japanese restaurant Frisco, best sushi Dallas, omakase Frisco, upscale Japanese dining Frisco Texas, sushi near me Frisco, Musashi sushi">
+    <link rel="canonical" href="{{ client.domain }}{{ page.url }}">
+
+    <!-- Social Media Display -->
+    <meta property="og:title" content="{{ title if title != 'Home' else 'Toscana | Premium Sushi & Japanese Cuisine — Frisco, TX' }}"/>
+    <meta property="og:description" content="{{ description if description else 'Premium sushi and Japanese cuisine in Frisco, TX. Fresh fish flown in regularly for an elevated dining experience near Dallas.' }}"/>
+    <meta property="og:type" content="restaurant"/>
+    <meta property="og:url" content="{{ client.domain }}{{ page.url }}"/>
+    <meta property="og:image" content="{{ client.domain }}/assets/images/og-image.webp"/>
+    <meta property="og:image:secure_url" content="{{ client.domain }}/assets/images/og-image.webp"/>
+    <meta property="og:locale" content="en_US"/>
+    <meta property="og:site_name" content="Toscana Sushi — Frisco, TX"/>
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image"/>
+    <meta name="twitter:title" content="{{ title if title != 'Home' else 'Toscana | Premium Sushi & Japanese Cuisine — Frisco, TX' }}"/>
+    <meta name="twitter:description" content="{{ description if description else 'Premium sushi and Japanese cuisine in Frisco, TX. Fresh fish flown in regularly.' }}"/>
+    <meta name="twitter:image" content="{{ client.domain }}/assets/images/og-image.webp"/>
+
+    <!-- Favicons -->
+    <link rel="apple-touch-icon" sizes="180x180" href="{{ '/assets/favicons/apple-touch-icon.png' | url }}">
+    <link rel="icon" type="image/png" sizes="32x32" href="{{ '/assets/favicons/favicon-32x32.png' | url }}?v1">
+    <link rel="icon" type="image/png" sizes="16x16" href="{{ '/assets/favicons/favicon-16x16.png' | url }}">
+    <link rel="manifest" href="{{ '/assets/favicons/site.webmanifest' | url }}">
+    <meta name="msapplication-TileColor" content="#141e21">
+    <meta name="theme-color" content="#141e21">
+
+    <!-- Sitewide Stylesheets and Scripts -->
+    <link rel="stylesheet" href="{{ '/assets/css/styles.css' | url }}">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@400;700;900&family=Cinzel:wght@400..900&family=Cormorant+Garamond:ital,wght@0,300..700;1,300..700&family=Luckiest+Guy&family=Nunito:ital,wght@0,200..1000;1,200..1000&family=Rammetto+One&family=Roboto:ital,wght@0,100..900;1,100..900&family=Slackey&family=Source+Serif+4:ital,opsz,wght@0,8..60,200..900;1,8..60,200..900&family=Staatliches&family=UnifrakturMaguntia&display=swap" rel="stylesheet">
+
+    <!-- Bootstrap Icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
+
+    {% block head %}{% endblock %}
+
+    <title>{% if title == "Home" %}Toscana | Premium Sushi &amp; Japanese Cuisine — Frisco, TX{% else %}{{ title }} | Toscana Sushi — Frisco, TX{% endif %}</title>
+
+    <!-- Restaurant Schema -->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "Restaurant",
+        "name": "{{ client.name }}",
+        "description": "Premium sushi and Japanese cuisine in Frisco, TX. Fresh fish flown in regularly for an elevated dining experience near Dallas.",
+        "url": "{{ client.domain }}",
+        "telephone": "{{ client.phone }}",
+        "email": "{{ client.email }}",
+        "servesCuisine": ["Sushi", "Japanese", "Seafood"],
+        "priceRange": "{{ client.priceRange }}",
+        "address": {
+          "@type": "PostalAddress",
+          "streetAddress": "{{ client.address.street }}",
+          "addressLocality": "{{ client.address.city }}",
+          "addressRegion": "{{ client.address.stateAbbr }}",
+          "postalCode": "{{ client.address.zip }}",
+          "addressCountry": "US"
+        },
+        "logo": "{{ client.domain }}/assets/images/logo.png",
+        "image": "{{ client.domain }}/assets/images/og-image.webp",
+        "hasMap": "https://maps.google.com/?q=Musashi+Sushi+Frisco+TX",
+        "reservationUrl": "{{ client.reservationUrl }}",
+        "areaServed": [
+          { "@type": "City", "name": "Frisco" },
+          { "@type": "City", "name": "Plano" },
+          { "@type": "City", "name": "McKinney" },
+          { "@type": "City", "name": "Allen" },
+          { "@type": "City", "name": "The Colony" },
+          { "@type": "City", "name": "Dallas" }
+        ]
+      }
+    </script>
+
+    <!-- ADD GOOGLE ANALYTICS -->
+
+    <!-- Prevent scroll restoration flash -->
+    <script>if (history.scrollRestoration) history.scrollRestoration = 'manual';</script>
+
+  </head>
+
+  <body class="overflow-x-hidden">
+    {% include "components/header.njk" %}
+    <main>
+      {% block content %}{% endblock %}
+    </main>
+    {% include "components/footer.njk" %}
+    <script src="{{ '/assets/js/main.js' | url }}"></script>
+  </body>
+</html>
