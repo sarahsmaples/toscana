@@ -176,26 +176,37 @@ description: "Toscana 49 in midtown New York City features classic Italian dishe
 
   <!-- Reservations -->
   <section id="reservations" class="bg-warm-bg">
-    <div class="flex flex-col items-center justify-center text-center px-8 py-16 lg:px-14">
-      <p class="font-cormorant uppercase tracking-widest text-base text-accent mb-3">For Parties Up To 6</p>
-      <h2 class="text-4xl md:text-5xl text-gray-900 mb-4">Reserve a Table</h2>
-      <p class="text-gray-600 font-light text-lg mb-8 max-w-sm">Reservations recommended. Walk-ins welcome based on availability.</p>
-      <iframe id='widget' width='300' height='442' src='https://88restaurants.com/692/widgets/229' style='border: none; background: none; border-radius: 5px;'></iframe>
-    </div>
-  </section>
+    <div class="max-w-screen-xl mx-auto px-8 pt-16 lg:pt-24 lg:px-14">
 
-  <!-- Private Events -->
-  <section class="bg-warm-bg">
-    <div class="flex flex-col items-center justify-center text-center px-8 py-16 lg:px-14">
-      <p class="font-cormorant uppercase tracking-widest text-base text-accent mb-3">Larger Groups & Events</p>
-      <h2 class="text-4xl md:text-5xl text-gray-900 mb-4">Private Parties</h2>
-      <p class="text-gray-600 font-light text-lg mb-8 max-w-sm">
-        Hosting a reception, corporate event, or celebration? Our private upstairs space accommodates up to 50 guests with a dedicated bar.
-      </p>
-      <a href="{{ '/parties/' | url }}"
-        class="font-cormorant uppercase tracking-widest inline-flex items-center justify-center px-8 py-3 text-lg font-medium text-dark-bg bg-accent hover:bg-accent/90 focus:outline-none transition-colors duration-300">
-        Submit an Inquiry
-      </a>
+      <!-- Centered heading -->
+      <div class="text-center mb-12">
+        <p class="font-cormorant uppercase tracking-widest text-base text-accent mb-3">Reservations</p>
+        <h2 class="text-4xl md:text-5xl text-gray-900">Reserve a Table</h2>
+      </div>
+
+      <!-- Two columns -->
+      <div class="flex flex-col lg:flex-row lg:items-center gap-12 lg:gap-20 pb-16 lg:pb-24">
+
+      <!-- Left: text + CTA -->
+      <div class="flex-1">
+        <p class="text-gray-600 font-light text-lg mb-4 leading-relaxed">
+          Reservations are recommended. Walk-ins welcome based on availability. Use the widget to book a table for <strong class="font-normal text-gray-800">parties of 6 or fewer</strong>.
+        </p>
+        <p class="text-gray-500 font-light text-base mb-8 leading-relaxed">
+          Hosting a larger group, private dinner, or special event? Our private upstairs space accommodates up to 50 guests with a dedicated bar.
+        </p>
+        <a href="{{ '/parties/' | url }}"
+          class="font-cormorant uppercase tracking-widest inline-flex items-center justify-center px-8 py-3 text-base font-medium text-dark-bg bg-accent hover:bg-accent/90 focus:outline-none transition-colors duration-300">
+          Inquire About Private Events
+        </a>
+      </div>
+
+      <!-- Right: widget -->
+      <div class="flex justify-center shrink-0">
+        <iframe id='widget' width='300' height='442' src='https://88restaurants.com/692/widgets/229' style='border: none; background: none; border-radius: 5px;'></iframe>
+      </div>
+
+      </div>
     </div>
   </section>
 
