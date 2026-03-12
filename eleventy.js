@@ -8,7 +8,7 @@ async function imageUrlShortcode(src) {
     widths: [800],
     formats: ["jpeg"],
     outputDir: "./dist/img/",
-    urlPath: "/img/",
+    urlPath: "/toscana/img/",
   });
   return metadata.jpeg[0].url;
 }
@@ -18,7 +18,7 @@ async function imageShortcode(src, alt, sizes = "(min-width: 1024px) 400px, 200p
     widths: [200, 400, 800],
     formats: ["avif", "webp", "jpeg"],
     outputDir: "./dist/img/",
-    urlPath: "/img/",
+    urlPath: "/toscana/img/",
   });
 
   let imageAttributes = {
@@ -48,7 +48,7 @@ module.exports = function (eleventyConfig) {
     eleventyConfig.addPassthroughCopy("dist/css/styles.css");
 
     return {
-        pathPrefix: "/",
+        pathPrefix: "/toscana/",
         dir: {
         input: "src",
         output: "dist",
