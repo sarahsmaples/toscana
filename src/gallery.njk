@@ -1,6 +1,6 @@
 ---
 title: Gallery
-description: "Photos from Musashi — premium sushi and Japanese cuisine in Frisco, TX."
+description: "Photos from Toscana 49 — classic Italian cuisine in Midtown East, New York City."
 ---
 
 {% extends "layouts/base.njk" %}
@@ -8,35 +8,25 @@ description: "Photos from Musashi — premium sushi and Japanese cuisine in Fris
 {% block content %}
 
   <!-- Page Hero -->
-  <section class="bg-dark-bg pt-32 pb-12 text-center">
+  <section class="bg-warm-cream border-b border-stone-200 pt-32 pb-12 text-center">
     <p class="font-cormorant uppercase tracking-widest text-base text-accent mb-3">The Experience</p>
-    <h1 class="text-5xl md:text-6xl text-white">Gallery</h1>
+    <h1 class="text-5xl md:text-6xl text-gray-900">Gallery</h1>
   </section>
 
   <!-- Masonry Grid -->
-  <section class="bg-dark-bg px-4 pb-20">
+  <section class="bg-warm-bg px-4 pb-20 pt-8">
     <div class="masonry-grid max-w-screen-xl mx-auto">
 
       {% set images = [
-        "g23.jpeg","g7.jpg","g41.jpg","g15.jpg","g33.jpg",
-        "g2.png","g19.jpeg","g48.jpg","g12.jpg","g27.jpg",
-        "g36.jpg","g4.jpeg","g50.jpg","g21.jpeg","g38.jpg",
-        "g9.jpg","g44.jpg","g16.jpg","g29.jpg","g42.jpg",
-        "g6.jpg","g31.jpg","g18.JPG","g47.jpg","g11.jpg",
-        "g24.jpeg","g39.jpg","g14.jpg","g45.jpg","g8.jpg",
-        "g22.jpeg","g35.jpg","g49.jpg","g13.jpg","g40.jpg",
-        "g3.jpeg","g26.jpg","g43.jpg","g17.jpg","g30.jpg",
-        "g5.jpg","g46.jpg","g20.jpeg","g37.jpg","g10.jpg",
-        "g28.jpg","g34.jpg","g1.jpg","g25.jpg","g32.jpg"
+        "full_1.jpg","full_2.jpg","full_3.jpg","full_4.jpg","full_5.jpg",
+        "full_6.jpg","full_7.jpg","full_8.jpg","full_9.jpg","full_10.jpg",
+        "full_11.jpg","full_12.jpg","full_13.jpg","full_14.jpg","full_15.jpg"
       ] %}
 
       {% for img in images %}
+        {% set src = "./src/assets/images/gallery/" + img %}
         <div class="masonry-item" data-index="{{ loop.index0 }}">
-          <img
-            src="{{ ('/assets/images/gallery/' + img) | url }}"
-            alt="Musashi gallery photo {{ loop.index }}"
-            loading="lazy"
-          >
+          {% image src, "Toscana 49 gallery photo " + loop.index, "(min-width: 1024px) 400px, 200px" %}
         </div>
       {% endfor %}
 
@@ -67,6 +57,8 @@ description: "Photos from Musashi — premium sushi and Japanese cuisine in Fris
       margin-bottom: 8px;
       cursor: pointer;
       overflow: hidden;
+      border: 1px solid #e7e5e0;
+      box-shadow: 0 1px 4px rgba(0,0,0,0.07);
     }
     .masonry-item img {
       display: block;
@@ -163,11 +155,21 @@ description: "Photos from Musashi — premium sushi and Japanese cuisine in Fris
     const total = items.length;
     let current = 0;
 
+    function getLargestSrc(item) {
+      const img = item.querySelector('img');
+      const srcset = img.srcset;
+      if (srcset) {
+        const entries = srcset.split(',').map(s => s.trim());
+        return entries[entries.length - 1].split(' ')[0];
+      }
+      return img.src;
+    }
+
     function openLightbox(index) {
       current = index;
-      const img = items[current].querySelector('img');
-      lightboxImg.src = img.src;
-      lightboxImg.alt = img.alt;
+      const item = items[current];
+      lightboxImg.src = getLargestSrc(item);
+      lightboxImg.alt = item.querySelector('img').alt;
       counter.textContent = (current + 1) + ' / ' + total;
       lightbox.classList.add('active');
       lightbox.setAttribute('aria-hidden', 'false');
@@ -182,9 +184,9 @@ description: "Photos from Musashi — premium sushi and Japanese cuisine in Fris
 
     function navigate(dir) {
       current = (current + dir + total) % total;
-      const img = items[current].querySelector('img');
-      lightboxImg.src = img.src;
-      lightboxImg.alt = img.alt;
+      const item = items[current];
+      lightboxImg.src = getLargestSrc(item);
+      lightboxImg.alt = item.querySelector('img').alt;
       counter.textContent = (current + 1) + ' / ' + total;
     }
 

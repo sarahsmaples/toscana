@@ -44,12 +44,3 @@ if (menuToggle && mobileMenu) {
   });
 }
 
-// Scroll-aware nav background
-const nav = document.getElementById('main-nav');
-if (nav) {
-  const onScroll = () => {
-    nav.classList.toggle('nav-scrolled', window.scrollY > 10);
-  };
-  window.addEventListener('scroll', onScroll, { passive: true });
-  onScroll(); // run on load in case page is already scrolled
-}

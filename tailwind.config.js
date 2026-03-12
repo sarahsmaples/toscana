@@ -6,6 +6,8 @@ module.exports = {
       colors: {
         'dark-bg': '#141e21',
         'accent': '#ccbc89',
+        'warm-bg': '#faf8f5',
+        'warm-cream': '#f0ebe2',
       },
       fontFamily: {
         'cormorant': ['"Cormorant Garamond"', 'serif'],

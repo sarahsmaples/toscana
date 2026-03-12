@@ -1,28 +1,28 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" style="scroll-behavior: smooth;">
   <head>
     <!-- Standard meta tags -->
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="{{ description if description else 'Musashi is a premium sushi and Japanese cuisine restaurant in Frisco, TX. Fresh fish flown in regularly. Upscale dining near Dallas — reserve your table today.' }}">
-    <meta name="keywords" content="sushi Frisco TX, Japanese restaurant Frisco, best sushi Dallas, omakase Frisco, upscale Japanese dining Frisco Texas, sushi near me Frisco, Musashi sushi">
+    <meta name="description" content="{{ description if description else 'Toscana 49 in midtown New York City features classic Italian dishes and fresh homemade pastas that are made daily in our own kitchen.' }}">
+    <meta name="keywords" content="toscana 49, toscana, classic italian, homemade italian, new york, NYC, midtown, midtown east">
     <link rel="canonical" href="{{ client.domain }}{{ page.url }}">
 
     <!-- Social Media Display -->
-    <meta property="og:title" content="{{ title if title != 'Home' else 'Toscana | Premium Sushi & Japanese Cuisine — Frisco, TX' }}"/>
-    <meta property="og:description" content="{{ description if description else 'Premium sushi and Japanese cuisine in Frisco, TX. Fresh fish flown in regularly for an elevated dining experience near Dallas.' }}"/>
+    <meta property="og:title" content="{{ title if title != 'Home' else 'Toscana 49 | Midtown East Italian | NYC' }}"/>
+    <meta property="og:description" content="{{ description if description else 'Toscana 49 in midtown New York City features classic Italian dishes and fresh homemade pastas that are made daily in our own kitchen.' }}"/>
     <meta property="og:type" content="restaurant"/>
     <meta property="og:url" content="{{ client.domain }}{{ page.url }}"/>
     <meta property="og:image" content="{{ client.domain }}/assets/images/og-image.webp"/>
     <meta property="og:image:secure_url" content="{{ client.domain }}/assets/images/og-image.webp"/>
     <meta property="og:locale" content="en_US"/>
-    <meta property="og:site_name" content="Toscana Sushi — Frisco, TX"/>
+    <meta property="og:site_name" content="Toscana 49 — New York, NY"/>
 
     <!-- Twitter Card -->
     <meta name="twitter:card" content="summary_large_image"/>
-    <meta name="twitter:title" content="{{ title if title != 'Home' else 'Toscana | Premium Sushi & Japanese Cuisine — Frisco, TX' }}"/>
-    <meta name="twitter:description" content="{{ description if description else 'Premium sushi and Japanese cuisine in Frisco, TX. Fresh fish flown in regularly.' }}"/>
+    <meta name="twitter:title" content="{{ title if title != 'Home' else 'Toscana 49 | Midtown East Italian | NYC' }}"/>
+    <meta name="twitter:description" content="{{ description if description else 'Toscana 49 in midtown New York City features classic Italian dishes and fresh homemade pastas that are made daily in our own kitchen.' }}"/>
     <meta name="twitter:image" content="{{ client.domain }}/assets/images/og-image.webp"/>
 
     <!-- Favicons -->
@@ -30,8 +30,8 @@
     <link rel="icon" type="image/png" sizes="32x32" href="{{ '/assets/favicons/favicon-32x32.png' | url }}?v1">
     <link rel="icon" type="image/png" sizes="16x16" href="{{ '/assets/favicons/favicon-16x16.png' | url }}">
     <link rel="manifest" href="{{ '/assets/favicons/site.webmanifest' | url }}">
-    <meta name="msapplication-TileColor" content="#141e21">
-    <meta name="theme-color" content="#141e21">
+    <meta name="msapplication-TileColor" content="#faf8f5">
+    <meta name="theme-color" content="#faf8f5">
 
     <!-- Sitewide Stylesheets and Scripts -->
     <link rel="stylesheet" href="{{ '/assets/css/styles.css' | url }}">
@@ -46,7 +46,7 @@
 
     {% block head %}{% endblock %}
 
-    <title>{% if title == "Home" %}Toscana | Premium Sushi &amp; Japanese Cuisine — Frisco, TX{% else %}{{ title }} | Toscana Sushi — Frisco, TX{% endif %}</title>
+    <title>{% if title == "Home" %}Toscana 49 | Midtown East Italian | NYC{% else %}{{ title }} | Toscana 49 — NYC{% endif %}</title>
 
     <!-- Restaurant Schema -->
     <script type="application/ld+json">
@@ -54,11 +54,11 @@
         "@context": "https://schema.org",
         "@type": "Restaurant",
         "name": "{{ client.name }}",
-        "description": "Premium sushi and Japanese cuisine in Frisco, TX. Fresh fish flown in regularly for an elevated dining experience near Dallas.",
+        "description": "Toscana 49 in midtown New York City features classic Italian dishes and fresh homemade pastas that are made daily in our own kitchen.",
         "url": "{{ client.domain }}",
         "telephone": "{{ client.phone }}",
         "email": "{{ client.email }}",
-        "servesCuisine": ["Sushi", "Japanese", "Seafood"],
+        "servesCuisine": ["Italian", "Pasta", "Mediterranean"],
         "priceRange": "{{ client.priceRange }}",
         "address": {
           "@type": "PostalAddress",
@@ -70,20 +70,28 @@
         },
         "logo": "{{ client.domain }}/assets/images/logo.png",
         "image": "{{ client.domain }}/assets/images/og-image.webp",
-        "hasMap": "https://maps.google.com/?q=Musashi+Sushi+Frisco+TX",
+        "hasMap": "https://maps.google.com/?q=Toscana+49+New+York+NY",
         "reservationUrl": "{{ client.reservationUrl }}",
         "areaServed": [
-          { "@type": "City", "name": "Frisco" },
-          { "@type": "City", "name": "Plano" },
-          { "@type": "City", "name": "McKinney" },
-          { "@type": "City", "name": "Allen" },
-          { "@type": "City", "name": "The Colony" },
-          { "@type": "City", "name": "Dallas" }
+          { "@type": "City", "name": "New York" },
+          { "@type": "Neighborhood", "name": "Midtown East" },
+          { "@type": "Neighborhood", "name": "Midtown Manhattan" },
+          { "@type": "Neighborhood", "name": "Murray Hill" },
+          { "@type": "Neighborhood", "name": "Turtle Bay" }
         ]
       }
     </script>
 
-    <!-- ADD GOOGLE ANALYTICS -->
+    <!-- Google Analytics -->
+    <script>
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+      ga('create', 'UA-76973001-1', 'auto');
+      ga('send', 'pageview');
+    </script>
 
     <!-- Prevent scroll restoration flash -->
     <script>if (history.scrollRestoration) history.scrollRestoration = 'manual';</script>

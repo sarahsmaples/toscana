@@ -1,36 +1,36 @@
-<footer class="bg-gray-900 border-t border-gray-800">
+<footer class="bg-warm-cream border-t border-stone-200">
   <div class="w-full max-w-screen-xl mx-auto px-4 py-12 md:py-16">
     <div class="md:grid md:grid-cols-3 gap-8 mb-10">
 
       <!-- Brand -->
       <div class="mb-8 md:mb-0">
         <a href="{{ '/' | url }}" class="block mb-3">
-          <img src="{{ '/assets/images/logo-nav.png' | url }}" alt="Musashi Sushi — Frisco, TX" class="h-10">
+          <img src="{{ '/assets/images/logo-nav.png' | url }}" alt="Toscana 49 — New York, NY" class="h-10">
         </a>
-        <p class="text-sm text-gray-400 font-light mb-2">Premium Sushi &amp; Japanese Cuisine</p>
-        <p class="text-sm text-gray-400 font-light">{{ client.address.city }}, {{ client.address.stateAbbr }} {{ client.address.zip }}</p>
-        <a href="tel:{{ client.phone }}" class="text-sm text-gray-400 hover:text-white font-light">{{ client.phone }}</a>
+        <p class="text-sm text-gray-600 font-light mb-2">{{ client.tagline }}</p>
+        <p class="text-sm text-gray-600 font-light">{{ client.address.city }}, {{ client.address.stateAbbr }} {{ client.address.zip }}</p>
+        <a href="tel:{{ client.phone }}" class="text-sm text-gray-600 hover:text-gray-900 font-light">{{ client.phone }}</a>
       </div>
 
       <!-- Nav Links -->
       <div class="mb-8 md:mb-0">
         <h4 class="font-cormorant uppercase tracking-widest text-xs text-gray-500 mb-4">Navigate</h4>
-        <ul class="space-y-2 text-sm font-light text-gray-400">
-          <li><a href="{{ '/' | url }}" class="hover:text-white">Home</a></li>
-          <li><a href="{{ '/menu' | url }}" class="hover:text-white">Menu</a></li>
-          <li><a href="{{ '/gallery' | url }}" class="hover:text-white">Gallery</a></li>
-          <li><a href="{{ '/' | url }}#about" class="hover:text-white">About</a></li>
-          <li><a href="{{ '/' | url }}#contact" class="hover:text-white">Contact</a></li>
-          <li><a href="{{ '/' | url }}#reservations" class="hover:text-white">Reservations</a></li>
-          <li><a href="{{ '/careers/' | url }}" class="hover:text-white">Careers</a></li>
-          <li><a href="{{ '/parties/' | url }}" class="hover:text-white">Private Parties</a></li>
+        <ul class="space-y-2 text-sm font-light text-gray-600">
+          <li><a href="{{ '/' | url }}" class="hover:text-gray-900">Home</a></li>
+          <li><a href="{{ '/menu' | url }}" class="hover:text-gray-900">Menu</a></li>
+          <li><a href="{{ '/gallery' | url }}" class="hover:text-gray-900">Gallery</a></li>
+          <li><a href="{{ '/' | url }}#about" class="hover:text-gray-900">About</a></li>
+          <li><a href="{{ '/' | url }}#contact" class="hover:text-gray-900">Contact</a></li>
+          <li><a href="{{ '/' | url }}#reservations" class="hover:text-gray-900">Reservations</a></li>
+          <li><a href="{{ '/careers/' | url }}" class="hover:text-gray-900">Careers</a></li>
+          <li><a href="{{ '/parties/' | url }}" class="hover:text-gray-900">Private Parties</a></li>
         </ul>
       </div>
 
       <!-- Reserve -->
       <div>
         <h4 class="font-cormorant uppercase tracking-widest text-xs text-gray-500 mb-4">Reservations</h4>
-        <p class="text-sm text-gray-400 font-light mb-4">Reservations are recommended. Walk-ins welcome based on availability.</p>
+        <p class="text-sm text-gray-600 font-light mb-4">Reservations are recommended. Walk-ins welcome based on availability.</p>
         <a href="{{ '/' | url }}#reservations"
           class="font-cormorant uppercase tracking-widest inline-flex items-center px-5 py-2 text-sm text-dark-bg bg-accent hover:bg-accent/90 transition-colors duration-300">
           Reserve Now
@@ -38,16 +38,14 @@
       </div>
 
     </div>
-    <hr class="border-gray-800"/>
+    <hr class="border-stone-300"/>
     <div class="pt-6 sm:flex sm:items-center sm:justify-between">
       <div class="mb-2 sm:mb-0">
         <span class="block text-sm text-gray-500">© {{ global.currentYear }} {{ client.name }}. All Rights Reserved.</span>
-        <a href="https://88restaurants.com/" target="_blank" rel="noopener noreferrer" class="text-xs text-gray-600 hover:text-gray-400 transition-colors duration-300">Restaurant Website Designed by 88 Restaurants</a>
+        <a href="https://88restaurants.com/" target="_blank" rel="noopener noreferrer" class="text-xs text-gray-500 hover:text-gray-700 transition-colors duration-300">Restaurant Website Designed by 88 Restaurants</a>
       </div>
       <div class="flex items-center gap-4">
-        <a href="{{ '/terms' | url }}" class="text-xs text-gray-600 hover:text-gray-400 transition-colors duration-300">Terms &amp; Conditions</a>
-        <a href="{{ '/privacy' | url }}" class="text-xs text-gray-600 hover:text-gray-400 transition-colors duration-300">Privacy Policy</a>
-        <p class="text-xs text-gray-600">Premium Sushi &amp; Japanese Cuisine — Frisco, TX</p>
+        <p class="text-xs text-gray-500">{{ client.tagline }} — {{ client.address.city }}, {{ client.address.stateAbbr }}</p>
       </div>
     </div>
   </div>
