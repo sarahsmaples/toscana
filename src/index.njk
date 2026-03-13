@@ -57,13 +57,32 @@ description: "Toscana 49 in midtown New York City features classic Italian dishe
   <section id="about" class="bg-warm-bg py-12 md:py-16">
     <div class="mx-auto max-w-screen-xl flex flex-col md:grid md:grid-cols-2 gap-0 md:items-center">
 
-      <!-- Image (left on desktop, below text on mobile) -->
-      <div data-animate="fade-left" class="relative overflow-hidden order-last md:order-first" style="height: 420px;">
-        <img src="{{ '/assets/images/green-pasta.jpg' | url }}" alt="Inside Toscana 49" class="absolute inset-0 w-full h-full object-cover object-center">
+      <!-- Image column (left on desktop, below text on mobile) -->
+      <div data-animate="fade-left" class="order-last md:order-first flex flex-col gap-1">
+        <!-- Row of 3 small images -->
+        <div class="flex gap-1">
+          <div class="flex-1 overflow-hidden" style="height: 120px;">
+            <img src="{{ '/assets/images/exterior.jpg' | url }}" alt="Toscana 49 exterior" class="w-full h-full object-cover object-center">
+          </div>
+          <div class="flex-1 overflow-hidden" style="height: 120px;">
+            <img src="{{ '/assets/images/lemon.jpg' | url }}" alt="Lemon detail" class="w-full h-full object-cover object-center">
+          </div>
+          <div class="flex-1 overflow-hidden" style="height: 120px;">
+            <img src="{{ '/assets/images/bar.jpg' | url }}" alt="Bar at Toscana 49" class="w-full h-full object-cover object-center">
+          </div>
+        </div>
+        <!-- Main image -->
+        <div class="relative overflow-hidden" style="height: 420px;">
+          <img src="{{ '/assets/images/green-pasta.jpg' | url }}" alt="Inside Toscana 49" class="absolute inset-0 w-full h-full object-cover object-center">
+        </div>
       </div>
 
       <!-- Text (right) -->
       <div class="relative flex flex-col justify-center px-8 py-16 lg:px-14">
+        <!-- Branch watermark -->
+        <img src="{{ '/assets/images/branch-2.png' | url }}" alt="" aria-hidden="true"
+          class="absolute inset-0 w-full h-full object-contain pointer-events-none"
+          style="opacity: 0.2; transform: rotate(-45deg); z-index: 1;">
         <div data-animate="fade-up" class="relative z-10">
           <p class="font-cormorant uppercase tracking-widest text-base text-accent mb-4">About Us</p>
           <h2 class="text-5xl md:text-6xl text-gray-900 mb-8">Benvenuti!</h2>
@@ -225,9 +244,16 @@ description: "Toscana 49 in midtown New York City features classic Italian dishe
   <section id="contact" class="bg-warm-bg">
     <div class="flex min-h-[600px]">
 
-      <!-- Left: image -->
-      <div data-animate="fade-left" class="hidden md:block w-1/2 shrink-0 relative">
-        <img src="{{ '/assets/images/contact.jpg' | url }}" alt="Italian cuisine at Toscana 49" class="absolute inset-0 w-full h-full object-cover">
+      <!-- Left: image with semi-circle clip -->
+      <div data-animate="fade-left" class="hidden md:flex items-center justify-center w-1/2 shrink-0">
+        <div style="
+          width: 100%;
+          height: 100%;
+          position: relative;
+          clip-path: ellipse(100% 50% at 0% 50%);
+        ">
+          <img src="{{ '/assets/images/contact.jpg' | url }}" alt="Italian cuisine at Toscana 49" class="absolute inset-0 w-full h-full object-cover">
+        </div>
       </div>
 
       <!-- Right: heading + info + form -->
